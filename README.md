@@ -1,0 +1,1 @@
+This is about the Full Stack project ... having REST API, CRUD, Frontend, Backend, Framework
