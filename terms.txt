@@ -1,0 +1,6 @@
+Dialect
+Tomcat Jetty
+- Execution: No. At runtime, Spring Boot wires everything together with dependency injection. Whether you put all classes in one package or split them, the JVM doesn’t care — performance is the same.
+Beans
+Jakarta v/s Javax
+REST API

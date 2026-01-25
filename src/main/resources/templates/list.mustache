@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>LIST</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>STUDENT</h3>
+            <table class="table">
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>DEPT</th>
+                    <th>COURSE_ID</th>
+                </tr>
+                {{#stu}}
+                <tr>
+                    <td>{{sid}}</td>
+                    <td>{{name}}</td>
+                    <td>{{dept}}</td>
+                    <td>{{course_id}}</td>
+                </tr>
+                {{/stu}}
+            </table>
+        </div>
+        <div class="col-md-3">
+            <h3>COURSE</h3>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>SUBJECT</th>
+                    <th>TITLE</th>
+                    <th>PROFESSOR</th>
+                </tr>
+                {{#crs}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{subject}}</td>
+                    <td>{{title}}</td>
+                    <td>{{professor}}</td>
+                </tr>
+                {{/crs}}
+            </table>
+        </div>
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
