@@ -25,15 +25,15 @@ public class StudentService {
         return studentRepo.findAll();
     }
 
-    public void delStudent(Integer sid)
-    {
-        studentRepo.deleteById(sid);
-    }
+    // public void delStudent(Integer sid)
+    // {
+    //     studentRepo.deleteById(sid);
+    // }
 
-    public Student oneStudent(Integer sid)
-    {
-        return studentRepo.findById(sid).orElse(null);
-    }
+    // public Student oneStudent(Integer sid)
+    // {
+    //     return studentRepo.findById(sid).orElse(null);
+    // }
 
 
 }
