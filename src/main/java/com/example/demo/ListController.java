@@ -6,10 +6,10 @@ import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model; 
 
-class Student{
+class StudentL{
     String name, dept;
 
-    public Student(String name, String dept) {
+    public StudentL(String name, String dept) {
         this.name = name;
         this.dept = dept;
     }
@@ -20,7 +20,7 @@ class Student{
 @RequestMapping("/student")
 public class ListController {
 
-    ArrayList<Student> student = new ArrayList<>(); 
+    ArrayList<StudentL> student = new ArrayList<>(); 
     
     @GetMapping
     String allStudent(Model model)
@@ -35,7 +35,7 @@ public class ListController {
     {
         String name = stu.get("name");
         String dept = stu.get("dept");
-        student.add(new Student(name, dept));
+        student.add(new StudentL(name, dept));
 
         return "redirect:/student";
    

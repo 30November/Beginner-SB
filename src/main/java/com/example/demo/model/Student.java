@@ -15,8 +15,12 @@ public class Student {
     private Course course;
 
 
+    public Student() {
+        //This is for Hibernate ... use reflection    
+    }
 
     public Student(String name, String dept, Course course) {
+        //This is for developer
         this.name = name;
         this.dept = dept;
         this.course = course;
@@ -54,6 +58,5 @@ public class Student {
         this.course = course;
     }
 
-    
 
 }

@@ -12,7 +12,8 @@ public class Course {
     private String professor;
 
 
-    
+    public Course() {
+    }
     
     public Course(String subject, String title, String professor) {
         this.subject = subject;
