@@ -4,7 +4,9 @@ import com.example.demo.model.*;
 
 import com.example.demo.service.*;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,15 +33,11 @@ public class DBController {
     @GetMapping
     String render(Model model) {
 
-       try {
-         List<Student> stu = studentService.allStudent();
-         List<Course> crs = courseService.allCourse();
-         model.addAttribute("stu", stu);
-         model.addAttribute("crs", crs);
-       } catch (Exception e) {
-        System.out.println(e);
-       }
-        
+        List<Student> stu = studentService.allStudent();
+        List<Course> crs = courseService.allCourse();
+        model.addAttribute("stu", stu);
+        model.addAttribute("crs", crs);
+
         return "all";
     }
 
@@ -64,6 +62,29 @@ public class DBController {
 
         return "redirect:/list";
 
+    }
+
+    @DeleteMapping("/s:{id}")
+    String removedataS(@PathVariable int id) {
+        studentService.delStudent(id);
+        return "redirect:/list";
+    }
+
+    @GetMapping("/search")
+    String search(
+            @RequestParam(defaultValue = "") String q,
+            Model model) {
+        
+                if (q.isEmpty())
+            model.addAttribute("stu", studentService.allStudent());
+        else
+            model.addAttribute("stu", studentService.fewStudent(q));
+        return "search";
+    }
+
+    @PostMapping("/searchS")
+    String searchStudent(@RequestParam String searchS) {
+        return "redirect:/list/search?q=" + searchS;
     }
 
 }

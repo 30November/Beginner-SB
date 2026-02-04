@@ -21,6 +21,11 @@ public class CourseService {
     {
         return courseRepo.findAll();
     }
+
+    public void delCourse(int id)
+    {
+        courseRepo.deleteById(id);
+    }
     
 
 }

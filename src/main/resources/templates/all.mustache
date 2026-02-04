@@ -17,12 +17,12 @@
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">STUDENT</label>
                     <input type="text" name="name" class="form-control" id="formGroupExampleInput1"
-                        placeholder="Enter your name">
+                        placeholder="Enter your name" required>
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">DEPARTMENT</label>
                     <input type="text" name="dept" class="form-control" id="formGroupExampleInput2"
-                        placeholder="Enter It's dept">
+                        placeholder="Enter It's dept" required>
                 </div>
                 <!-- <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">DEPARTMENT</label>
@@ -31,20 +31,34 @@
                 </div> -->
                 <button type="submit" class="btn btn-primary">ADD</button>
             </form>
+            <!-- <form class="d-flex container" action="/list/searchS" method="post">
+                <div class="mb-3">
+                    <label for="searching_student" class="form-label">Search</label>
+                    <input type="text" name="searchS" class="form-control" id="seraching_student"
+                        placeholder="Type to search">
+                </div>
+                <button type="submit" class="btn btn-success">ADD</button>
+            </form> -->
+            <br>
             <h3>STUDENT</h3>
-            <table class="table">
+            <table class="table table-bordered border-dark">
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
                     <th>DEPT</th>
-                    <th>COURSE_ID</th>
+                    <th>COURSE</th>
+                    <th>REMOVE</th>
                 </tr>
                 {{#stu}}
                 <tr>
                     <td>{{id}}</td>
                     <td>{{name}}</td>
                     <td>{{dept}}</td>
-                    <td>X</td>
+                    <td>
+                        {{#course}} {{professor}} {{/course}}
+                        {{^course}} X {{/course}}
+                    </td>
+                    <td><a href="list/s:{{id}}" type="button" class="btn btn-danger">Del</a></td>
                 </tr>
                 {{/stu}}
             </table>
@@ -53,21 +67,19 @@
             <form class="container" action="/list/addC" method="post">
                 <div class="mb-3">
                     <label for="formGroupExampleInput" class="form-label">SUBJECT</label>
-                    <input type="text" name="sub" class="form-control" id="c1"
-                        placeholder="Enter subject">
+                    <input type="text" name="sub" class="form-control" id="c1" placeholder="Enter subject">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">TITLE</label>
-                    <input type="text" name="title" class="form-control" id="c2"
-                        placeholder="It's title">
+                    <input type="text" name="title" class="form-control" id="c2" placeholder="It's title">
                 </div>
                 <div class="mb-3">
                     <label for="formGroupExampleInput2" class="form-label">PROF</label>
-                    <input type="text" name="prof" class="form-control" id="c3"
-                        placeholder="professor name">
+                    <input type="text" name="prof" class="form-control" id="c3" placeholder="professor name">
                 </div>
                 <button type="submit" class="btn btn-primary">ADD</button>
             </form>
+            <br>
             <h3>COURSE</h3>
             <table class="table">
                 <tr>
