@@ -30,10 +30,10 @@ public class StudentService {
         studentRepo.deleteById(id);
     }
 
-    // public Student oneStudent(Integer sid)
-    // {
-    //     return studentRepo.findById(sid).orElse(null);
-    // }
+    public Student oneStudent(Integer sid)
+    {
+        return studentRepo.findById(sid).orElse(null);
+    }
 
     public List<Student> fewStudent(String subS)
     {

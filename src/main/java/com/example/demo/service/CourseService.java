@@ -26,6 +26,12 @@ public class CourseService {
     {
         courseRepo.deleteById(id);
     }
+
+    public Course oneCourse(String cid)
+    {
+        int id = Integer.parseInt(cid);
+        return courseRepo.findById(id).orElse(null);
+    }
     
 
 }

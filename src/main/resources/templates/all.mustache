@@ -29,7 +29,7 @@
                     <input type="number" name="cid" class="form-control" id="formGroupExampleInput2"
                         placeholder="Enter course_id">
                 </div> -->
-                <button type="submit" class="btn btn-primary">ADD</button>
+                <button type="submit" class="btn btn-success">ADD</button>
             </form>
             <!-- <form class="d-flex container" action="/list/searchS" method="post">
                 <div class="mb-3">
@@ -47,7 +47,7 @@
                     <th>NAME</th>
                     <th>DEPT</th>
                     <th>COURSE</th>
-                    <th>REMOVE</th>
+                    <th>Op</th>
                 </tr>
                 {{#stu}}
                 <tr>
@@ -58,7 +58,8 @@
                         {{#course}} {{professor}} {{/course}}
                         {{^course}} X {{/course}}
                     </td>
-                    <td><a href="list/s:{{id}}" type="button" class="btn btn-danger">Del</a></td>
+                    <td><a href="list/s:{{id}}" type="button" class="btn btn-danger px-1">Del</a>
+                        <a href="list/update/{{id}}" type="button" class="btn btn-primary px-1">Update</a></td>
                 </tr>
                 {{/stu}}
             </table>
@@ -77,7 +78,7 @@
                     <label for="formGroupExampleInput2" class="form-label">PROF</label>
                     <input type="text" name="prof" class="form-control" id="c3" placeholder="professor name">
                 </div>
-                <button type="submit" class="btn btn-primary">ADD</button>
+                <button type="submit" class="btn btn-success">ADD</button>
             </form>
             <br>
             <h3>COURSE</h3>

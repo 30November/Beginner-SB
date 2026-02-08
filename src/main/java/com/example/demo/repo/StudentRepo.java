@@ -9,6 +9,8 @@ import java.util.List;
 
 public interface StudentRepo extends JpaRepository<Student,Integer>{
     
-    @Query("Select s from Student s where s.name like %?1%")
+    @Query(value = "Select * from student where name LIKE %?1% ",
+        nativeQuery = true
+    )
     List<Student> findS(String subS);
 }

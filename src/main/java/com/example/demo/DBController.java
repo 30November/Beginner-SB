@@ -4,7 +4,6 @@ import com.example.demo.model.*;
 
 import com.example.demo.service.*;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -64,18 +63,46 @@ public class DBController {
 
     }
 
-    @DeleteMapping("/s:{id}")
+    // DELETE
+    @GetMapping("/s:{id}")
     String removedataS(@PathVariable int id) {
         studentService.delStudent(id);
+        return "forward:/list";
+    }
+
+    // UPDATE
+    @GetMapping("/update/{id}")
+    String update(@PathVariable int id,
+            Model model) {
+        Student student = studentService.oneStudent(id);
+        model.addAttribute("id", id);
+        model.addAttribute("name", student.getName());
+        model.addAttribute("dept", student.getDept());
+
+        return "update";
+    }
+
+    @PostMapping("/updateS/{id}")
+    String updateStudent(@PathVariable int id,
+        @RequestParam Map<String,String> s
+    )
+    {
+        Student student = studentService.oneStudent(id);
+        student.setName(s.get("name"));
+        student.setDept(s.get("dept"));
+        student.setCourse(courseService.oneCourse(s.get("cid")));
+        studentService.addStudent(student);
+        
         return "redirect:/list";
     }
 
+    // SEARCH
     @GetMapping("/search")
     String search(
             @RequestParam(defaultValue = "") String q,
             Model model) {
-        
-                if (q.isEmpty())
+
+        if (q.isEmpty())
             model.addAttribute("stu", studentService.allStudent());
         else
             model.addAttribute("stu", studentService.fewStudent(q));
