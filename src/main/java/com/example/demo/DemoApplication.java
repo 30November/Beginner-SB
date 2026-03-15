@@ -10,5 +10,3 @@ class DemoApplication {
 	}
 
 }
-
-//handling none imp in MUSTACHE
