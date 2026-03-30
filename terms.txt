@@ -1,59 +1,20 @@
-Dialect
 Tomcat Jetty
-- Execution: No. At runtime, Spring Boot wires everything together with dependency injection. Whether you put all classes in one package or split them, the JVM doesn’t care — performance is the same.
 Beans
 Jakarta v/s Javax
 REST API
 
-handling none imp in MUSTACHE
-//dependencies
-<dependencies>
-    <!-- Spring Boot Starter Web -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-
-    <!-- Spring Boot Starter Security -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-security</artifactId>
-    </dependency>
-
-    <!-- Spring Boot Starter Data JPA -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-data-jpa</artifactId>
-    </dependency>
-
-    <!-- PostgreSQL Driver -->
-    <dependency>
-        <groupId>org.postgresql</groupId>
-        <artifactId>postgresql</artifactId>
-        <scope>runtime</scope>
-    </dependency>
-
-    <!-- Thymeleaf (for login/register forms) -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-thymeleaf</artifactId>
-    </dependency>
-
-    <!-- Validation (for form inputs, OTP, etc.) -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-validation</artifactId>
-    </dependency>
-
-    <!-- BCrypt (Password hashing) -->
-    <dependency>
-        <groupId>org.springframework.security</groupId>
-        <artifactId>spring-security-crypto</artifactId>
-    </dependency>
-
-    <!-- Optional: OAuth2 Client (Google, Microsoft login) -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-oauth2-client</artifactId>
-    </dependency>
-</dependencies>
+1. JPA + User Entity
+2. Password Hashing (BCrypt)
+3. Spring Security Default
+4. Custom UserDetailsService
+5. In-Memory Auth (for clarity)
+6. Role-Based Access
+7. DB Authentication (full login)
+8. CAPTCHA
+9. Phone + OTP
+10. JWT
+11. Refresh Token
+12. OAuth2
+13. Email Verification
+14. Password Reset
+15. Rate Limiting + Security Hardening
